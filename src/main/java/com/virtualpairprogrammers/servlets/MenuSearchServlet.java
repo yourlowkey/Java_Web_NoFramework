@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.virtualpairprogrammers.data.MenuDao;
 import com.virtualpairprogrammers.data.MenuDaoFactory;
 import com.virtualpairprogrammers.domain.MenuItem;
-@WebFilter("/searchResults.html")
+//@WebFilter("/searchResults.html")
 public class MenuSearchServlet extends HttpServlet {
 
 	public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
