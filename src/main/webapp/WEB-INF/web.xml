@@ -9,10 +9,7 @@
         The menu and online ordering system for Ricky's Restaurant
     </description>
 
-	<servlet>
-		<servlet-name>ViewMenuServlet</servlet-name>
-		<servlet-class>com.virtualpairprogrammers.servlets.ViewMenuServlet</servlet-class>
-	</servlet>
+
 	
 	<servlet>
 		<servlet-name>MenuSearchServlet</servlet-name>
@@ -28,10 +25,7 @@
 	
 
 	
-	<servlet-mapping>
-		<servlet-name>ViewMenuServlet</servlet-name>
-		<url-pattern></url-pattern>
-	</servlet-mapping>
+
 
 	<servlet-mapping>
 		<servlet-name>MenuSearchServlet</servlet-name>
