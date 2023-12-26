@@ -9,36 +9,15 @@
         The menu and online ordering system for Ricky's Restaurant
     </description>
 
-
-	
-	<servlet>
-		<servlet-name>MenuSearchServlet</servlet-name>
-		<servlet-class>com.virtualpairprogrammers.servlets.MenuSearchServlet</servlet-class>
-	</servlet>
-	
-
-	
 	<servlet>
 		<servlet-name>OrderReceivedServlet</servlet-name>
 		<servlet-class>com.virtualpairprogrammers.servlets.OrderReceivedServlet</servlet-class>
 	</servlet>
 	
-
-	
-
-
-	<servlet-mapping>
-		<servlet-name>MenuSearchServlet</servlet-name>
-		<url-pattern>/searchResults.html</url-pattern>
-	</servlet-mapping>
-	
-
 	<servlet-mapping>
 		<servlet-name>OrderReceivedServlet</servlet-name>
 		<url-pattern>/orderReceived.html</url-pattern>
 	</servlet-mapping>
-	
-
 	
 	<session-config>
 		<session-timeout>120</session-timeout>
