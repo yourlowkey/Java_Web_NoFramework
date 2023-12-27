@@ -14,6 +14,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import com.virtualpairprogrammers.data.MenuDao;
+import com.virtualpairprogrammers.data.MenuDaoFactory;
 @WebServlet("/thankYou.html")
 @ServletSecurity(@HttpConstraint(rolesAllowed= {"user"}))
 public class ThankYouServlet extends HttpServlet {
@@ -23,13 +26,17 @@ public class ThankYouServlet extends HttpServlet {
 		
 		
 		HttpSession session = request.getSession();
-		Double total = (Double) session.getAttribute("total");
-		
+		Long orderId = (Long) session.getAttribute("orderId");
+		MenuDao dao = MenuDaoFactory.getMenuDao();
+		Double total = dao.getOrderTotal(orderId);
+		String status = dao.getOrder(orderId).getStatus();
 		if (total == null) {
 			response.sendRedirect("/order.html");
 			return;
 		}
 		request.setAttribute("total", total);
+		request.setAttribute("id", orderId);
+		request.setAttribute("status", status);
 		
 		ServletContext context = getServletContext();
 		RequestDispatcher dispatcher = context.getRequestDispatcher("/thankyou.jsp");
